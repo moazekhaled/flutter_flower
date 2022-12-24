@@ -1,8 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-
-import '../shared/custom_textfield.dart';
+import 'package:flutter_application_1/shared/contants.dart';
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -18,19 +17,46 @@ class Login extends StatelessWidget {
               const SizedBox(
                 height: 64,
               ),
-              Mytextfirld(
-                textInputTypeee: TextInputType.emailAddress,
-                ispassword: false,
-                hinttexttt: "Enter Your Email : ",
+              TextField(
+                  keyboardType: TextInputType.emailAddress,
+                  obscureText: false,
+                  decoration: decorationTextfield.copyWith(
+                    hintText: "Enter Your Email : ",
+                  )),
+              const SizedBox(
+                height: 33,
+              ),
+              TextField(
+                  keyboardType: TextInputType.text,
+                  obscureText: true,
+                  decoration: decorationTextfield.copyWith(
+                    hintText: "Enter Your password : ",
+                  )),
+              ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(BTNgreen),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(12)),
+                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8))),
+                ),
+                child: Text(
+                  "click here",
+                  style: TextStyle(fontSize: 19),
+                ),
               ),
               const SizedBox(
                 height: 33,
               ),
-              Mytextfirld(
-                textInputTypeee: TextInputType.text,
-                ispassword: true,
-                hinttexttt: "Enter Your password : ",
-              ),
+              Row(mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Do not have an account?"),style: TextStyle(fontSize: 20)
+                  TextButton.(
+   onPressed: (){},
+   child:
+    Text('sign up', style: TextStyle(color: Colors.black,fontSize: 20)),)
+                ],
+              )
             ],
           ),
         ),
